@@ -10,10 +10,8 @@ public interface IRepository<T> where T : class, IEntity
     bool Remove(int id);
     T? GetById(int id);
     // Maybe returning IEnumerable would be a better API? 
-
     IReadOnlyList<T> GetAll();
     // Signature change shoud still respect covariance with Predicate
-
     IReadOnlyList<T> Find(Func<T, bool> predicate);
 }
 
